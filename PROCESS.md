@@ -1,53 +1,66 @@
 # Process overview
 
-<!-- TEMPLATE: this file is a shape to fill in, not a form. Replace everything
-     in it with your own overview, and delete this comment — `pnpm
-     check:evidence` will remind you if it's still here. -->
-
-Written by you, for a reader: how you got from the brief to the harness and
-agentic workflow behind this submission. Markers read this file and follow its
-citations; they don't trawl the repo for evidence you didn't point at.
-
-This file is the shape; the course site's
-[assessment page](https://comp.anu.edu.au/courses/comp4020-agentic-coding-studio/topics/assessment/#what-you-submit)
-is the requirement, and its
-[word counts](https://comp.anu.edu.au/courses/comp4020-agentic-coding-studio/topics/assessment/#word-counts)
-cover every deliverable.
-
 ## What I built
 
-One paragraph: the thing, and the idea behind it.
+*Dating for Engineers* (SLOP4785) applies financial and game-theoretic
+models — price discovery, balance sheets, priced options, stop-losses — to
+romantic relationships, across twelve weeks that each introduce exactly one
+model variable, three assessments that sum to 100% of the course weight, and
+a working case-review format that carries one running case through the
+whole semester.
 
 ## How I got here
 
-The account of the process: how the work actually went, and how you knew the
-result was right. Tell it in whatever order makes it clear. A weekly prototype
-needs a paragraph or two; an assignment needs more.
+The brief needed a narrow, coherent concept, not a grab-bag of topics
+wearing a course code. I picked the finance/game-theory framing because
+that's the actual pedagogical bet the course is making: dating is an
+anxiety-inducing domain precisely because it feels uncontrollable, and
+recasting attraction, dependency and commitment as legible, model-able
+variables is what makes it feel plannable instead of purely reactive. The
+title started as a metaphor ("Romantic Risk Management") but got renamed to
+the blunter *Dating for Engineers*
+([`5f5a488`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Cichlider/commit/5f5a488))
+once it was clear the metaphor belonged inside the course's teaching
+approach, not doubled up in its title as well.
 
-Cite the record as you go, as links whose text is the commit hash or range and
-whose target is this repo's commit or compare URL, so a reader clicks straight
-to the evidence:
+Every case referenced in the lecture and session content — the balance-sheet
+workshop, the stalled-gate diagnoses, the trust-test audits — is a composite
+built from patterns common across people's experiences in general, not a
+retelling of any one real relationship. That's a deliberate choice, not an
+omission: the model is meant as a general claim, and a disguised diary entry
+would undercut that.
 
-- one commit: [`a1b2c3d`](https://github.com/YOUR-ORG/YOUR-REPO/commit/a1b2c3d)
-- a range:
-  [`a1b2c3d...e4f5a6b`](https://github.com/YOUR-ORG/YOUR-REPO/compare/a1b2c3d...e4f5a6b)
+I set the course identity and renamed the sessions collection to "Case
+Review" first
+([`55fce8e`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Cichlider/commit/55fce8e)),
+then replaced the starter's stock photography with generated
+candlestick-chart imagery in the brand palette
+([`c6bb3c7`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Cichlider/commit/c6bb3c7))
+— a `sharp`-rendered SVG rather than a photo, so the visual register matches
+the finance framing rather than fighting it. The twelve weeks went in as
+three batches of four
+([`4c14742`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Cichlider/commit/4c14742)
+through
+[`f1f909d`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Cichlider/commit/f1f909d)),
+each lecture given a unique `concept:` key by construction rather than by
+review.
 
-To pair a prompt with the commit it produced, quote the prompt (curated, not a
-full transcript) next to the citation:
+That "by construction" claim needed a check, not just a habit, so
+[`2936d99`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Cichlider/commit/2936d99)
+adds three spec tests reading the built `/api/index.json`: assessment
+weights sum to 100, no two lectures share a concept, and every case review
+links back to its week's lecture. I used a prompt along the lines of:
 
-> the prompt, verbatim
+> Write custom spec tests that check the things the per-node schema can't:
+> the assessment weights sum to 100 across the whole collection, and no two
+> lectures share a concept.
 
-Screenshots are welcome where one carries the point better than a sentence does.
-Commit the file to this repo and link it with a **relative** path, which is what
-makes it render on GitHub: `![alt text](docs/before.png)`. Images don't count
-towards the word count and don't replace the citation.
+`pnpm check` — types, build, accessibility, link and reference integrity,
+deck compilation, and the four spec tests — is green at every commit from
+[`55fce8e`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Cichlider/commit/55fce8e)
+onward, checked after each batch rather than only at the end.
 
 ## Before you ship
 
-`pnpm check:evidence` verifies that this comment is gone, that your citations
-resolve to real commits, that a crit week's reflection entry is in
-`reflections/`, and that your `CLAUDE.md` is there. It checks that your account
-is traceable, not that it is good: that is the marker's call.
-
-Images aren't checked: unlike a citation whose SHA doesn't resolve, a broken
-image is visible the moment this file is rendered on GitHub.
+`pnpm check` and `pnpm check:evidence` both pass locally. The repo has not
+been pushed or made public.
