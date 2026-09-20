@@ -42,15 +42,16 @@ export const slopCourseMetaSchema = z
 // navigation label and /api/index.json all read this object.
 export const courseMeta = slopCourseMetaSchema.parse({
   code: "SLOP4785",
-  title: "Romantic Risk Management",
+  title: "Dating for Engineers",
   session: "Semester 1",
   year: 2027,
   level: 4,
   startDate: "2027-02-22",
   endDate: "2027-05-28",
   description:
-    "A systems and finance treatment of romantic relationships: attraction " +
-    "as price discovery, dependency as a balance sheet, and commitment as a " +
-    "priced option, for students who trust models more than feelings.",
+    "Applies financial and game-theoretic models to romantic relationships: " +
+    "attraction as price discovery, dependency as a balance sheet, and " +
+    "commitment as a priced option, for students who trust models more " +
+    "than feelings.",
   tags: ["finance", "game theory", "relationships"],
 }) satisfies CourseMetaInput;
