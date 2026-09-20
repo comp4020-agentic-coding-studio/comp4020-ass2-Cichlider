@@ -60,7 +60,27 @@ deck compilation, and the four spec tests — is green at every commit from
 [`55fce8e`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Cichlider/commit/55fce8e)
 onward, checked after each batch rather than only at the end.
 
+## Post-ship: closing gaps against the source material
+
+After shipping, I compared the built site line-by-line against the two
+source essays the course concept is drawn from and found real gaps: the
+model's variable notation, its short-term/long-term strategy distinction,
+its risk disclosures, and four of its seven behavioural-monitoring signals
+had been compressed out during the original build, not by design but because
+each week was written as a self-contained outline rather than checked
+against the source afterward.
+
+[`16becd0`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Cichlider/commit/16becd0)
+restores what a twelve-week, one-concept-per-week format had no natural home
+for: week 10's lecture and session now carry all seven behavioural signals
+instead of three, and a standalone `/glossary/` page (deliberately outside
+the weekly content graph, since it's reference material rather than a taught
+week) carries the variable notation, the two-strategy distinction, and five
+risk disclosures. `pnpm check` stayed green throughout — 38 pages, no
+accessibility violations, no broken links, four spec tests passing.
+
 ## Before you ship
 
-`pnpm check` and `pnpm check:evidence` both pass locally. The repo has not
-been pushed or made public.
+`pnpm check` and `pnpm check:evidence` both pass locally. The repo is public
+and deployed at
+[comp4020-agentic-coding-studio.github.io/comp4020-ass2-Cichlider](https://comp4020-agentic-coding-studio.github.io/comp4020-ass2-Cichlider/).
